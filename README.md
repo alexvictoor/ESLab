@@ -1,4 +1,4 @@
 ESLab
 =====
 
-A simple event store relying on Java B-Tree implementations
+A simple event store relying on pluggable Java B-Tree implementations and Apache Avro for serialization
