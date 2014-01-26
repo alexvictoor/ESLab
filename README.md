@@ -29,11 +29,14 @@ It is quite straightforward to persist domain events with ESLab:
 Take a look to classes SimpleEvent and SimpleSerializer in the test source directory for a serialization example.
 Below the code fragment that bootstrap an event store based on BerkeleyDB:
 
-	String tmpDir 
-		= System.getProperty("java.io.tmpdir"); 		// the path to the folder where the data will be written
+	String tmpDir 												// the path to the folder 
+		= System.getProperty("java.io.tmpdir"); 				// where the data will be written
+
 	Collection<Serializer> serializers = Lists.newArrayList(); 	// the event serializers that will be used to 
 																//serialize and deserialize events by the store
+	
 	serializers.add(new SimpleSerializer());					// you need one serializer per event type
+	
 	BdbStore bdbStore = new BdbStore(tmpDir, serializers);		// the actual store instantiation
 																// Here it is a BerkeleyDB store 
 																// Change the class name for LevelDB or MapDB
