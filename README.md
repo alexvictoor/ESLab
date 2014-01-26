@@ -19,7 +19,9 @@ The purpose of ESLab is to demonstrate how easy is to build an event store. You 
 ESLab quickstart
 -----------------
 __Work in progress__
+
 It is quite straightforward to persist domain events with ESLab:
+
 1. Make your event classes implement the ESLab Event interface
 2. For each Event, implement a Serializer
 3. Choose an event store implementation based either on BerkeleyDB, LevelDB or MapDB
@@ -27,10 +29,10 @@ It is quite straightforward to persist domain events with ESLab:
 Take a look to classes SimpleEvent and SimpleSerializer in the test source directory for a serialization example.
 Below the code fragment that bootstrap an event store based on BerkeleyDB:
 
-> String tmpDir = System.getProperty("java.io.tmpdir"); 		// the path to the folder where the data will be written
-> Collection<Serializer> serializers = Lists.newArrayList(); 	// the event serializers that will be used to serialize and deserialize events by the store
-> serializers.add(new SimpleSerializer());						// you need one serializer per event type
-> BdbStore bdbStore = new BdbStore(tmpDir, serializers);		// the actual store instantiation. Here it is a BerkeleyDB store. Just change the class name for LevelDB or MapDB
+	String tmpDir = System.getProperty("java.io.tmpdir"); 		// the path to the folder where the data will be written
+	Collection<Serializer> serializers = Lists.newArrayList(); 	// the event serializers that will be used to serialize and deserialize events by the store
+	serializers.add(new SimpleSerializer());					// you need one serializer per event type
+	BdbStore bdbStore = new BdbStore(tmpDir, serializers);		// the actual store instantiation. Here it is a BerkeleyDB store. Just change the class name for LevelDB or MapDB
 
 
 Why implementing an event store using a B-Tree
