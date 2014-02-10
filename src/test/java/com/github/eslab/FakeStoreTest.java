@@ -2,6 +2,7 @@ package com.github.eslab;
 
 
 import com.google.common.base.Stopwatch;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class FakeStoreTest {
 
 
     @Test
+    @Ignore
     public void bench() {
         for (int k=0; k<5; k++ ) {
             List<UUID> ids = new ArrayList<>();

@@ -16,6 +16,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -27,29 +33,33 @@
             <artifactId>je</artifactId>
             <groupId>com.sleepycat</groupId>
             <version>5.0.97</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.iq80.leveldb</groupId>
             <artifactId>leveldb</artifactId>
             <version>0.6</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.fusesource.leveldbjni</groupId>
             <artifactId>leveldbjni-all</artifactId>
             <version>1.7</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.mapdb</groupId>
             <artifactId>mapdb</artifactId>
             <version>0.9.8</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
-            <version>1.7.5</version>
+            <version>1.7.6</version>
         </dependency>
 
         <dependency>

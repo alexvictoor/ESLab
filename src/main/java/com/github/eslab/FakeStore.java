@@ -7,13 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created with IntelliJ IDEA.
- * User: FamilleVictoor
- * Date: 01/01/14
- * Time: 23:27
- * To change this template use File | Settings | File Templates.
- */
 public class FakeStore implements Store {
 
     private ListMultimap<UUID, byte[]> store = ArrayListMultimap.create();

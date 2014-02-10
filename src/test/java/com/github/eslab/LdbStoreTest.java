@@ -5,6 +5,7 @@ import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -50,23 +51,24 @@ public class LdbStoreTest {
     }
 
     @Test
+    @Ignore
     public void bench() {
         for (int k=0; k<5; k++ ) {
-        List<UUID> ids = new ArrayList<>();
-        Stopwatch stopwatch = Stopwatch.createStarted();
-        for (int i =0; i<1000; i++) {
-            UUID id = UUID.randomUUID();
-            ids.add(id);
-            for (int j =0; j<100; j++) {
-                ldbStore.store(new SimpleEvent(id, System.currentTimeMillis(), j));
+            List<UUID> ids = new ArrayList<>();
+            Stopwatch stopwatch = Stopwatch.createStarted();
+            for (int i =0; i<1000; i++) {
+                UUID id = UUID.randomUUID();
+                ids.add(id);
+                for (int j =0; j<100; j++) {
+                    ldbStore.store(new SimpleEvent(id, System.currentTimeMillis(), j));
+                }
             }
-        }
-        System.out.println("100000 insertions in " + stopwatch);
-        stopwatch = Stopwatch.createStarted();
-        for (int i =0; i<1000; i++) {
-            ldbStore.loadEventStream(ids.get(i));
-        }
-        System.out.println("1000 reads in " + stopwatch);
+            System.out.println("100000 insertions in " + stopwatch);
+            stopwatch = Stopwatch.createStarted();
+            for (int i =0; i<1000; i++) {
+                ldbStore.loadEventStream(ids.get(i));
+            }
+            System.out.println("1000 reads in " + stopwatch);
         }
 
     }

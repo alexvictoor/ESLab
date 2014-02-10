@@ -5,6 +5,7 @@ import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ public class MapDbStoreTest {
     }
 
     @Test
+    @Ignore
     public void bench() {
         for (int k=0; k<5; k++ ) {
             List<UUID> ids = new ArrayList<>();

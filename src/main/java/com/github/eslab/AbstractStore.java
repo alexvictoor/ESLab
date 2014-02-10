@@ -41,7 +41,7 @@ public abstract class AbstractStore implements Store {
     }
 
     @Override
-    public void store(Event event) {
+    public final void store(Event event) {
         checkNotNull(event);
         Serializer serializer = serializersByClass.get(event.getClass());
         byte[] bytes = serializer.serialize(event);

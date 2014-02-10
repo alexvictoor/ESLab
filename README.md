@@ -4,7 +4,7 @@ ESLab as Event Sourcing Lab
 ESLab in a nutshell
 -------------------
 
-ESLab is a realy simple event store relying on two things:
+ESLab is a realy simple event store relying on two main things:
 
 1. Avro, a very efficient serialization tool with a killer feature for event sourcing: [Schema Resolution](http://avro.apache.org/docs/1.7.5/spec.html#Schema+Resolution)
 2. Java B-Tree on filesystem to acually persist events.  
@@ -33,7 +33,7 @@ Below the code fragment that bootstrap an event store based on BerkeleyDB:
 		= System.getProperty("java.io.tmpdir"); 				// where the data will be written
 
 	Collection<Serializer> serializers = Lists.newArrayList(); 	// the event serializers that will be used to 
-																//serialize and deserialize events by the store
+																// serialize and deserialize events by the store
 	
 	serializers.add(new SimpleSerializer());					// you need one serializer per event type
 	
