@@ -2,13 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
+    <groupId>com.github</groupId>
+    <artifactId>eslab</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>my-app</name>
-    <url>http://maven.apache.org</url>
+    <name>ESLab</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -98,6 +97,22 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>0.33</version>
+                <configuration>
+                    <targetClasses>
+                        <param>com.github.eslab*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.*</param>
+                    </targetTests>
+                    <outputFormats>
+                        <outputFormat>XML</outputFormat>
+                    </outputFormats>
                 </configuration>
             </plugin>
         </plugins>
